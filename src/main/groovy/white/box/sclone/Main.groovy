@@ -3,8 +3,10 @@ package white.box.sclone
 import static groovyx.javafx.GroovyFX.start
 
 start {
+
+    def fxml = new javafx.fxml.FXMLLoader(this.class.getResource('/sclone.fxml'))
     stage(title: 'GroovyFX Hello World', visible: true) {
-        scene(fill: BLACK, width: 600, height: 250) {
+        scene(root: fxml.load(), fill: BLACK, width: 600, height: 250) {
             hbox(padding: 60) {
                 text(text: 'Groovy', font: '80pt sanserif') {
                     fill linearGradient(endX: 0, stops: [PALEGREEN, SEAGREEN])
